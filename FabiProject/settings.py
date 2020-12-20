@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'service.apps.ServiceConfig',
     'shop.apps.ShopConfig',
+    'accounts.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,7 @@ STATICFILES_DIRS = [
 # login redirect url
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# email config - fake mail service
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / "send_emails"
